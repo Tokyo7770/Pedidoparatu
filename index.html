@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quer casar comigo?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="titulo">Quer casar comigo, meu amor?</h1>
+    <div class="botoes">
+      <button id="sim" onclick="window.location.href='mensagem.html'">Sim!</button>
+      <button id="nao">Não</button>
+    </div>
+    <div id="mensagem-alerta" class="alerta"></div>
+  </div>
+
+  <script>
+    const btnNao = document.getElementById("nao");
+    const alerta = document.getElementById("mensagem-alerta");
+    let tentativas = 0;
+
+    function moverBotao() {
+      tentativas++;
+      if (tentativas > 12) {
+        alerta.textContent = "O NÃO NÃO É UMA POSSIBILIDADE PARA VOCÊ";
+        alerta.style.display = "block";
+      }
+
+      const larguraJanela = window.innerWidth - btnNao.offsetWidth;
+      const alturaJanela = window.innerHeight - btnNao.offsetHeight;
+
+      const novaEsquerda = Math.random() * larguraJanela;
+      const novoTopo = Math.random() * alturaJanela;
+
+      btnNao.style.position = "absolute";
+      btnNao.style.left = novaEsquerda + "px";
+      btnNao.style.top = novoTopo + "px";
+    }
+
+    btnNao.addEventListener("mouseover", moverBotao);
+    btnNao.addEventListener("click", moverBotao);
+  </script>
+</body>
+</html>

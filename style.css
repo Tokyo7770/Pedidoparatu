@@ -1,0 +1,85 @@
+
+body {
+  background: radial-gradient(circle, #1f1c2c, #928dab);
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fundoAnimado 10s infinite alternate;
+}
+
+@keyframes fundoAnimado {
+  0% { background: radial-gradient(circle, #1f1c2c, #928dab); }
+  100% { background: radial-gradient(circle, #0f0c29, #302b63); }
+}
+
+.container {
+  text-align: center;
+  max-width: 700px;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #fff;
+}
+
+.titulo {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-shadow: 0 0 5px #fff;
+  animation: piscar 1s infinite alternate;
+}
+
+@keyframes piscar {
+  from { text-shadow: 0 0 10px #ff00ff; }
+  to { text-shadow: 0 0 20px #00ffff; }
+}
+
+.botoes {
+  margin-top: 30px;
+}
+
+button {
+  font-size: 1.5em;
+  padding: 12px 25px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #fff;
+}
+
+#sim {
+  background-color: #00ff99;
+  color: #000;
+}
+
+#sim:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00ff99;
+}
+
+#nao {
+  background-color: #ff0066;
+  color: white;
+}
+
+.alerta {
+  display: none;
+  margin-top: 40px;
+  font-size: 2em;
+  color: #ff0066;
+  text-shadow: 0 0 10px #ff0066;
+  animation: alertaPisca 0.8s infinite alternate;
+}
+
+@keyframes alertaPisca {
+  from { opacity: 1; }
+  to { opacity: 0.5; }
+}
